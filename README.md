@@ -7,6 +7,22 @@ Clone down
 git clone git@github.com:sckott/mapurisapi.git
 cd mapurisapi
 bundle install
+```
+
+Get Couch database up
+
+```sh
+git clone git@github.com:danielebailo/couchdb-dump.git
+cd couchdb-dump/bin
+#start couchdb
+#add new database called xyz
+bash couchdb-restore.sh localhost xyz mapuris.txt
+```
+
+Start Sinatra
+
+```sh
+cd mapurisapi
 ruby api.rb
 ```
 
