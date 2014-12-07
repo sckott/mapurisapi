@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'sinatra'
-require 'HTTParty'
+require 'httparty'
 require 'json'
 
 url = 'http://localhost:5984/mapuris'
