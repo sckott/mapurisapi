@@ -15,8 +15,8 @@ Get Couch database up
 git clone git@github.com:danielebailo/couchdb-dump.git
 cd couchdb-dump/bin
 #start couchdb
-#add new database called xyz
-bash couchdb-restore.sh localhost xyz mapuris.txt
+#add new database called mapuris
+bash couchdb-restore.sh localhost mapuris mapuris.txt
 ```
 
 Start Sinatra

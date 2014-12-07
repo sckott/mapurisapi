@@ -4,6 +4,7 @@ require 'HTTParty'
 require 'json'
 
 url = 'http://localhost:5984/mapuris'
+# url = 'https://app16517180.heroku.cloudant.com/mapuris'
 
 # before do
 #   puts '[Params]'
