@@ -51,7 +51,9 @@ get '/search' do
 	}
 	res = HTTParty.get(url2, options)
 	body = JSON.parse(res.body)
-	body['hits']['hits'] = body['hits']['hits'].collect { |p| {"score" => p['_score'], "source" => p['_source'] } }
+	body['hits']['hits'] = body['hits']['hits'].collect {
+		|p| {"score" => p['_score'], "source" => p['_source'] }
+	}
 	out = { "status" => "ok", "data" => body['hits'] }
 	return JSON.pretty_generate(out)
 end
