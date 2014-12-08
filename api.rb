@@ -21,7 +21,14 @@ get '/' do
 end
 
 get "/heartbeat" do
-	return JSON.pretty_generate({ "status" => "ok" })
+	return JSON.pretty_generate({
+		"status" => "ok",
+		"paths" => [
+			"/heartbeat",
+			"/links/:doi",
+			"/search"
+		]
+	})
 end
 
 get '/links/*' do
