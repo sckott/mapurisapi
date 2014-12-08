@@ -3,7 +3,8 @@ require 'sinatra'
 require 'httparty'
 require 'json'
 
-url = 'http://localhost:5984/mapuris'
+url = 'http://localhost:9200/mapuris/uris'
+# url = 'http://localhost:5984/mapuris'
 # url = 'https://app16517180.heroku.cloudant.com/mapuris'
 
 # before do
@@ -30,5 +31,19 @@ get '/links/*' do
 	res = HTTParty.get(url2)
 	body = JSON.parse(res.body)
 	out = { "status" => "ok", "data" => body }
+	return JSON.pretty_generate(out)
+end
+
+get '/search' do
+	url2 = url + '/_search'
+	options = {
+		query: {
+			q: params[:q]
+		}
+	}
+	res = HTTParty.get(url2, options)
+	body = JSON.parse(res.body)
+	body['hits']['hits'] = body['hits']['hits'].collect { |p| {"score" => p['_score'], "source" => p['_source'] } }
+	out = { "status" => "ok", "data" => body['hits'] }
 	return JSON.pretty_generate(out)
 end
