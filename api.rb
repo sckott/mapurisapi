@@ -38,7 +38,8 @@ get '/search' do
 	url2 = url + '/_search'
 	options = {
 		query: {
-			q: params[:q]
+			q: params[:q],
+			size: params[:size]
 		}
 	}
 	res = HTTParty.get(url2, options)
