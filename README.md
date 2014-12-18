@@ -1,6 +1,10 @@
 mapuris
 =======
 
+This project was started at the [PLOS article level metrics hackathon](http://articlemetrics.github.io/workshop_2014/) on 2014-12-06. The hackathon repo: https://github.com/articlemetrics/hackathon_2014 
+
+This repo contains a Ruby Sinatra API for serving versions of articles, based on a article DOI, or a query. Data is stored in, and search provided by, Elasticsearch.
+
 ## Clone this repo
 
 ```sh
